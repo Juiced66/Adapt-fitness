@@ -3,37 +3,37 @@
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         },
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         },
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         },
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         },
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         },
         {
             "title" : "Un équipement de test",
             "description" : "Il est super cet equipement",
-            "images" : ["../img/logo.svg"],
+            "images" : ["./img/logo.svg"],
             "modelisation" : "url des modelisation pour proposer au téléchargement"
         }
     ]

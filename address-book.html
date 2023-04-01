@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liste des équipements</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Adapt-Fitness</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="./index.html">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./equipments.html">Liste des équipements</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="./address-book.html">Annuaire des salles adaptées</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- End of Navbar -->
+
+<div class="container">
+    <h1>Annuaire des salles adaptées</h1>
+    <div id="addresses-container"></div>
+    <div id="pagination-links"></div>
+    <p>Pas trouvé la salle que vous cherchez ? <a href="#contact">Contactez-nous</a> pour nous la signaler.</p>
+</div>
+
+<script>
+    // Variables globales
+    var currentPage = 1;
+    var itemsPerPage = 5;
+    var addresses = []; // contiendra les adresses récupérées du fichier JSON
+
+    // Fonction pour récupérer les adresses du fichier JSON
+    function getAddresses() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                addresses = JSON.parse(xhr.responseText).addresses;
+                displayAddresses();
+            }
+        }
+        xhr.open('GET', './addresses/addresses.json', true);
+        xhr.send();
+    }
+
+    // Fonction pour afficher les adresses
+    function displayAddresses() {
+        var startIndex = (currentPage - 1) * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+        var addressesContainer = document.getElementById('addresses-container');
+        addressesContainer.innerHTML = '';
+        for (var i = startIndex; i < endIndex && i < addresses.length; i++) {
+            var address = addresses[i];
+            var addressHTML = '<div class="address">';
+            addressHTML += '<h3>' + address.address + '</h3>';
+            if (address.website) {
+                addressHTML += '<p>Site web : <a href="' + address.website + '">' + address.website + '</a></p>';
+            }
+            if (address.images.length > 0) {
+                addressHTML += '<div class="images">';
+                for (var j = 0; j < address.images.length; j++) {
+                    addressHTML += '<img src="' + address.images[j] + '" alt="image salle" style="max-width:40%">';
+                }
+                addressHTML += '</div>';
+            }
+            addressHTML += '</div>';
+            addressesContainer.innerHTML += addressHTML;
+        }
+        if (addresses.length == 0) {
+            addressesContainer.innerHTML = '<p>Pour l\'instant aucune salle de sport adaptée n\'est disponible.</p>';
+        }
+    }
+
+    // Fonction pour changer de page
+    function goToPage(page) {
+        currentPage = page;
+        displayAddresses();
+    }
+
+    // Évènement pour la pagination
+    var paginationLinks = document.getElementById('pagination-links');
+    paginationLinks.addEventListener('click', function(e) {
+        e.preventDefault();
+        var page = parseInt(e.target.getAttribute('data-page'));
+        goToPage(page);
+    });
+
+    // Appel de la fonction pour récupérer les adresses au chargement de la page
+    getAddresses();
+</script>
+</body>
+</html>
