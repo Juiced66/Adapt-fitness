@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adapt-Fitness</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Adapt-Fitness</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Nous contacter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="container py-5">
+    <h1 class="text-center mb-5">Adapt-Fitness</h1>
+    <p class="lead text-center mb-5">Un site pour partager des idées d'équipements adaptés pour les personnes en situation de handicap.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Image d'équipement adapté">
+      </div>
+      <div class="col-md-6">
+        <h2>Le projet</h2>
+        <p>Adapt-Fitness est un site web participatif qui permet à chacun de partager des idées d'équipements adaptés pour les personnes en situation de handicap. Que ce soit pour adapter des équipements déjà existants ou pour en créer de nouveaux, ce site est un lieu de partage et d'inspiration pour tous.</p>
+        <p>Si vous avez un projet à partager, veuillez nous contacter en utilisant le formulaire ci-dessous. Nous serons ravis de le partager sur notre site web.</p>
+      </div>
+    </div>
+
+    <section class="my-5" id="contact">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="text-center mb-5">Nous contacter</h2>
+          <form action="#" method="post">
+            <div class="mb-3">
+              <label for="name" class="form">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Votre nom" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Votre adresse e-mail" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Votre message" rows="5" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
