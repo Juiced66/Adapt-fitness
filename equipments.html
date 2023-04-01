@@ -11,7 +11,7 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Adapt Fitness</a>
+  <a class="navbar-brand" href="#">Adapt-Fitness</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,7 +21,7 @@
         <a class="nav-link" href="./index.html">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./equipements.html">Liste des équipements</a>
+        <a class="nav-link" href="./equipments.html">Liste des équipements</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Annuaire des salles adaptées</a>
@@ -34,10 +34,10 @@
 <!-- Page Content -->
 <div class="container">
   <h1>Liste des équipements</h1>
-  <div id="equipements-container" class="row">
-    <!-- Equipements will be loaded dynamically here -->
+  <div id="equipments-container" class="row">
+    <!-- Equipments will be loaded dynamically here -->
   </div>
-  <ul id="pagination" class="pagination justify-content-center">
+  <ul id="pagination-container" class="pagination justify-content-center">
     <!-- Pagination links will be loaded dynamically here -->
   </ul>
 </div>
@@ -51,29 +51,29 @@
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
-        const equipements = JSON.parse(this.responseText).equipements;
+        const equipments = JSON.parse(this.responseText).equipments;
         // Pagination des équipements
-        const equipementsContainer = document.getElementById("equipements-container");
+        const equipmentsContainer = document.getElementById("equipments-container");
         const paginationContainer = document.getElementById("pagination-container");
-        const equipementsPerPage = 5;
+        const equipmentsPerPage = 5;
         let currentPage = 1;
-        const renderEquipements = (equipementsToRender) => {
-          equipementsContainer.innerHTML = "";
-          equipementsToRender.forEach(equipement => {
-            equipementsContainer.innerHTML += `
+        const renderEquipments = (equipmentsToRender) => {
+          equipmentsContainer.innerHTML = "";
+          equipmentsToRender.forEach(equipment => {
+            equipmentsContainer.innerHTML += `
               <div class="col-12 mb-4">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">${equipement.titre}</h5>
-                    <p class="card-text">${equipement.description}</p>
+                    <h5 class="card-title">${equipment.title}</h5>
+                    <p class="card-text">${equipment.description}</p>
                     <div class="row">
-                      ${equipement.images.map(imageUrl => `
+                      ${equipment.images.map(imageUrl => `
                         <div class="col-4">
-                          <img class="img-fluid" src="${imageUrl}" alt="${equipement.titre}">
+                          <img class="img-fluid" src="${imageUrl}" alt="${equipment.title}">
                         </div>
                       `).join("")}
                     </div>
-                    <a href="${equipement.modelisation}" class="btn btn-primary">Télécharger la modélisation</a>
+                    <a href="${equipment.modelisation}" class="btn btn-primary">Télécharger la modélisation</a>
                   </div>
                 </div>
               </div>
@@ -90,24 +90,24 @@
             `;
           }
         };
-        const paginateEquipements = () => {
-          const startIndex = (currentPage - 1) * equipementsPerPage;
-          const endIndex = startIndex + equipementsPerPage;
-          const equipementsToRender = equipements.slice(startIndex, endIndex);
-          renderEquipements(equipementsToRender);
-          renderPaginationButtons(Math.ceil(equipements.length / equipementsPerPage));
+        const paginateEquipments = () => {
+          const startIndex = (currentPage - 1) * equipmentsPerPage;
+          const endIndex = startIndex + equipmentsPerPage;
+          const equipmentsToRender = equipments.slice(startIndex, endIndex);
+          renderEquipments(equipmentsToRender);
+          renderPaginationButtons(Math.ceil(equipments.length / equipmentsPerPage));
         };
-        paginateEquipements();
+        paginateEquipments();
         // Gestion des clics sur les boutons de pagination
         paginationContainer.addEventListener("click", event => {
           if (event.target.matches("[data-page]")) {
             currentPage = Number(event.target.getAttribute("data-page"));
-            paginateEquipements();
+            paginateEquipments();
           }
         });
       }
     };
-    xhr.open("GET", "./equipements/equipements.json", true);
+    xhr.open("GET", "./equipments/equipments.json", true);
     xhr.send();
   </script>
 </body>
