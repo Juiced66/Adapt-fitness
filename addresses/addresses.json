@@ -1,3 +1,18 @@
 {
-    "addresses" : []
+    "addresses" : [
+        {
+            "name" : "ANTS Lyon",
+            "address" : "46-14 All. d'Italie, 69007 Lyon",
+            "website": "https://ants-asso.com/sport/",
+            "images" : ["https://lh5.googleusercontent.com/p/AF1QipOyAP0biu2tPoXCBnOGdjwfDNlOLx1Aruse2MB1=w408-h474-k-no", "https://ants-asso.com/wp-content/uploads/2021/03/ANTS-Velo-electrostim.jpg" ]
+
+        },
+        {
+            "name" : "APA'Mouv",
+            "address" : "3 Rue Ginies Mares, 34250 Palavas-les-Flots",
+            "website": "https://www.apamouv.com/",
+            "images" : ["https://lh5.googleusercontent.com/p/AF1QipOJaM5HLM7mAlB-H4WT6D2PMJM_qFDvOeBRna5X=w439-h240-k-no" ]
+
+        }
+    ]
 }
