@@ -70,10 +70,10 @@
                   <div class="card-body">
                     <h5 class="card-title">${equipment.title}</h5>
                     <p class="card-text">${equipment.description}</p>
-                    <div class="row">
+                    <div class="d-flex">
                       ${equipment.images.map(imageUrl => `
-                        <div class="col-4">
-                          <img class="img-fluid" src="${imageUrl}" alt="${equipment.title}">
+                        <div>
+                          <img class="img-fluid px-2" src="${imageUrl}" alt="${equipment.title}" style="width:200px; height: 200px; object-fit: contain;">
                         </div>
                       `).join("")}
                     </div>
