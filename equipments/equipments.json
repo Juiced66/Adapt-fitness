@@ -3,15 +3,15 @@
         {
             "title" : "Sangle d'attache à un banc de développé couché",
             "description" : "Pour pouvoir utiliser un banc de développé couché, une PMR à besoin de se fixer au banc, avec cette sangle elle a la possibilité de se fixer en autonomie. <br> L'attache est imprimable en 3D et necessite une sangle et des poignées amovibles qui pourront être fixé sur le banc.",
-            "images" : ["./img/6.svg","./img/7.svg","./img/8.svg"],
-            "modelisation" : "url des modelisation pour proposer au téléchargement",
+            "images" : ["./img/6.png","./img/7.png","./img/8.png"],
+            "modelisation" : "./files/adapt-fitness-devices.skp",
             "website" : null
         },
         {
             "title" : "Protection pour banc de developpé couché",
             "description" : "Modele 3D d'une protection en bois pour pouvoir sécuriser l'utilisation d'un banc de developpé couché et pour pouvoir pousser en autonomie",
             "images" : ["./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png"],
-            "modelisation" : "url des modelisation pour proposer au téléchargement",
+            "modelisation" : "./files/adapt-fitness-devices.skp",
             "website" : null
         }
     ]
